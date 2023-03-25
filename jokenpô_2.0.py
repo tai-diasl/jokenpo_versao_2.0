@@ -16,6 +16,12 @@ while resp == "":
     opcoes = ["PEDRA", "PAPEL", "TESOURA"]
     random.choice(opcoes[pc])
 
+    elogio = random.randint(0, 3)
+    elogios = ["Você é fera, hein? Você pratica o dia todo?", "Você joga muito bem! Me conta o segredo?",
+               "Vou ficar de olho para ver se você não está 'roubando' haha",
+               "Quando eu crescer, quero jogar como você!"]
+    random.choice(elogios)
+
     print("""Suas opções:
     [ 0 ] PEDRA
     [ 1 ] PAPEL
@@ -37,15 +43,16 @@ while resp == "":
 
     if pc == 0 and jogador == 1 or pc == 1 and jogador == 2:
         print("JOGADOR VENCE")
-        print("Parabéns! Você joga MUITO BEM!")
+        print(elogios[elogio])
     elif pc == 0 and jogador == 2:
         print("COMPUTADOR VENCE ", end="")
+        print(emoji.emojize(":sunglasses:", language="alias"))
     elif jogador == 0 and pc == 1 or jogador == 1 and pc == 2:
-        print("COMPUTADOR VENCE ", end ="")
+        print("COMPUTADOR VENCE ", end="")
         print(emoji.emojize(":sunglasses:", language="alias"))
     elif jogador == 0 and pc == 2:
         print("JOGADOR VENCE")
-        print("Parabéns! Você joga MUITO BEM!")
+        print(elogios[elogio])
     elif jogador == pc:
         print("EMPATE")
         print("Humm... precisamos desempatar! Estamos bons, hein?")
